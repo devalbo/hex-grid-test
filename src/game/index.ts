@@ -38,9 +38,9 @@ export default createGame(HexGridTestPlayer, HexGridTestBoard, game => {
   board.createGrid({ rows: 1, columns: NUM_SLICE_COLUMNS, style: 'square'}, SliceColumn, 'slice-column');
 
   // I don't want all the hex spaces, just the ones in the middle, so destroy the edge ones
-  // board.all(HexSpace)
-  //   .filter(hs => !isBoardSpace(hs.row!, hs.column!))
-  //   .forEach(hs => hs.destroy());
+  board.all(HexSpace)
+    .filter(hs => !isBoardSpace(hs.row!, hs.column!))
+    .forEach(hs => hs.destroy());
 
 
 
